@@ -1,17 +1,16 @@
 // Import necessary modules and components from Angular
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
-import { HeaderModule } from './header/header.module';
+import { AppRoutingModule } from './app.routes';
+
 
 // Decorator to mark this class as an NgModule
 @NgModule({
   // Declarations: Components, directives, and pipes belonging to this module
   declarations: [
-    HeaderComponent
 
     // Other components, directives, pipes...
   ],
@@ -20,6 +19,7 @@ import { HeaderModule } from './header/header.module';
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    AppRoutingModule
 
 
     // Other imported modules...
