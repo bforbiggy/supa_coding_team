@@ -1,23 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterOutlet, RouterModule} from '@angular/router';
-import { HeaderModule } from './header/header.module';
+import { AppModule } from './app.module';
+
+
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterModule, RouterOutlet, HeaderModule],
+  imports: [AppModule, RouterModule, RouterOutlet],
   template: `
     <main>
       <header>
       </header>
       <nav>
-    <ul>
-      <li><a routerLink="/home">Home</a></li>
-      <li><a routerLink="/about">About</a></li>
-      <li><a routerLink="/login">Login</a></li>
-    <!-- Add more navigation links here -->
-    </ul>
-    </nav>
+      <ul>
+        <li><a routerLink="/home">Home</a></li>
+        <li><a routerLink="/about">About</a></li>
+        <li><a routerLink="/login">Login</a></li>
+      <!-- Add more navigation links here -->
+      </ul>
+      </nav>
+      <section>
+        <app-search-bar></app-search-bar>
+      </section>  
       <section>
         <router-outlet></router-outlet>
       </section>

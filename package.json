@@ -1,5 +1,8 @@
 {
   "devDependencies": {
     "tslib": "^2.6.2"
+  },
+  "dependencies": {
+    "ng2-search-filter": "^0.5.1"
   }
 }

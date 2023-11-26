@@ -1,0 +1,10 @@
+<div>
+    <input type="text" placeholder="Search..." [(ngModel)]="searchTerm" (input)="filterItems">
+    
+    <ul *ngIf="filteredItems.length > 0" class="suggestions">
+      <li *ngFor="let item of filteredItems" (click)="onItemClick(item)">
+        {{item.name}}
+      </li>
+    </ul>
+</div>
+  
