@@ -8,18 +8,33 @@ import { CommonModule } from '@angular/common';
 })
   
 export class HomeComponent {
-  //we are taking reponse from steam using the api
-  steamResponse: string = 'No response yet';
-
+  reviewCount: Number = 0;
+  name: String = "";
+  
   constructor() { 
-    this.loadReviews();
+    this.loadGame();
   }
 
-  async loadReviews() {
-    const apiUrl = 'https://localhost:3000/';
-    const response = await fetch(apiUrl);
-    const data = await response.text();
-    this.steamResponse = data;
+  async loadGame() {
+    // App headers
+    const requestHeaders: HeadersInit = new Headers();
+    requestHeaders.set('app_id', '413150');
+
+    // Load game reviews
+    const reviewUrl = 'http://localhost:3000/steamreviews';
+    const reviewResponse = await fetch(reviewUrl, {
+      headers: requestHeaders
+    });
+    const reviewData = await reviewResponse.json();
+    this.reviewCount = reviewData.query_summary.total_reviews;
+
+    // Load game name
+    const nameUrl = 'http://localhost:3000/steamname';
+    const nameResponse = await fetch(nameUrl, {
+      headers: requestHeaders
+    });
+    const nameData = await nameResponse.json();
+    this.name = nameData["413150"].data.name;
   }
 
   ngOnInit(): void {
