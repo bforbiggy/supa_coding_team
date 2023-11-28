@@ -42,5 +42,5 @@ testem.log
 Thumbs.db
 
 
-#Guys we need to add node_module cuz otherwise we be adding 25k files dude, dw these files only needed to be downloaded locally, we good in the hood
+#Guys we need to add node_module cuz otherwise we be adding 25k files dude, dw these files only needed to be downloaded locally
 node_modules/
