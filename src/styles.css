@@ -47,3 +47,5 @@ a:hover {
   background-color: #555;
   /* Change background color on hover */
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
