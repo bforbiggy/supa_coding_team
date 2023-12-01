@@ -8,31 +8,19 @@ import { CommonModule } from '@angular/common';
 })
   
 export class HomeComponent {
-  reviewCount: Number = 0;
   name: String = "";
   
   constructor() { 
-    this.loadGame(413150);
+    this.loadGame();
   }
 
-  async loadGame(app_id: Number) {
-    // App headers
-    const requestHeaders: HeadersInit = new Headers();
-    requestHeaders.set('app_id', `${app_id}`);
-
-    // Load game reviews
-    const reviewResponse = await fetch('http://localhost:3000/steamreviews', {
-      headers: requestHeaders
-    });
-    const reviewData = await reviewResponse.json();
-    this.reviewCount = reviewData.query_summary.total_reviews;
-
+  async loadGame() {
     // Load game name
-    const nameResponse = await fetch('http://localhost:3000/steamname', {
-      headers: requestHeaders
-    });
-    const nameData = await nameResponse.json();
-    this.name = nameData[`${app_id}`].data.name;
+    const response = await fetch('http://localhost:3000/steamgame');
+    const data = await response.json();
+    this.name = data.name;
+    //U guys can check the console to find review, it's for our testing purpose, should be fine tho
+    console.log(data.reviews);
   }
 
   ngOnInit(): void {
