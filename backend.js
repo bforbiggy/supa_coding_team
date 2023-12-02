@@ -10,7 +10,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/steamgame', async (req, res) => {
-	const app_id = `${962130}`;
+	const app_id = `${1832640}`;
 	const detailResponse = await fetch(`https://store.steampowered.com/api/appdetails?appids=${app_id}`);
 	const reviewResponse = await fetch(`https://store.steampowered.com/appreviews/${app_id}?json=1`);
 
