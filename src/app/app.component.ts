@@ -1,35 +1,23 @@
 import { Component, NgModule } from '@angular/core';
-import { RouterOutlet, RouterModule} from '@angular/router';
+import { RouterOutlet, RouterModule } from '@angular/router';
 import { AppModule } from './app.module';
-
-
-
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [AppModule, RouterModule, RouterOutlet],
   template: `
-    <main>
-      <header>
-      </header>
+    <div>
+      <header></header>
       <nav>
-      <ul>
-        <li><a routerLink="/home">Home</a></li>
-        <li><a routerLink="/about">About</a></li>
-        <li><a routerLink="/login">Login</a></li>
-      <!-- Add more navigation links here -->
-      </ul>
+        <a routerLink="/home">Home</a>
+        <a routerLink="/about">About</a>
+        <a routerLink="/login">Login</a>
       </nav>
-      <section>
-        <app-search-bar></app-search-bar>
-      </section>  
-      <section>
-        <router-outlet></router-outlet>
-      </section>
-    </main>
+      <router-outlet />
+    </div>
   `,
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
   title = 'homes';

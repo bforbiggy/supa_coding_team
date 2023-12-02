@@ -1,19 +1,14 @@
-import { NgModule} from '@angular/core';
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { LoginModule } from './login/login.module';
 
-import { SearchBarComponent } from './search-bar/search-bar.component';
-
 @NgModule({
-  declarations: [
-    SearchBarComponent,
-
-  ],
+  declarations: [],
   imports: [
     FormsModule, // Import FormsModule here
     LoginModule,
   ],
-  exports:[SearchBarComponent],
-  bootstrap: [SearchBarComponent]
+  exports: [],
+  bootstrap: [],
 })
-export class AppModule { }
+export class AppModule {}
