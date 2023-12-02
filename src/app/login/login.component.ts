@@ -1,23 +1,18 @@
 import { Component } from '@angular/core';
+import { SupaAuthService } from '../supaauth.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
+  providers: [],
 })
 export class LoginComponent {
   user: any;
 
-  async ngOnInit(): Promise<void> {
-    // Attempt to login using token
-    const token = window.localStorage.getItem('token');
-    if (token) {
-      const response = await fetch('http://localhost:3000/login', {
-        headers: {
-          token: `${token}`,
-        },
-      });
-      this.user = await response.json();
-    }
+  constructor(private supaauth: SupaAuthService) {
+    supaauth.updated.subscribe((data) => {
+      this.user = supaauth.user;
+    });
   }
 }

@@ -8,6 +8,7 @@ import {
   SocialAuthServiceConfig,
   GoogleLoginProvider,
 } from '@abacritt/angularx-social-login';
+import { SupaAuthService } from './supaauth.service';
 
 @NgModule({
   declarations: [HomeComponent],
@@ -28,7 +29,10 @@ import {
           {
             id: GoogleLoginProvider.PROVIDER_ID,
             provider: new GoogleLoginProvider(
-              '728677578017-4q3ceolgs573hfo6av86an7l5lnl8n1n.apps.googleusercontent.com'
+              '728677578017-4q3ceolgs573hfo6av86an7l5lnl8n1n.apps.googleusercontent.com',
+              {
+                oneTapEnabled: false,
+              }
             ),
           },
         ],
@@ -37,6 +41,7 @@ import {
         },
       } as SocialAuthServiceConfig,
     },
+    SupaAuthService,
   ],
 })
 export class AppModule {}
