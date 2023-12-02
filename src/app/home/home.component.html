@@ -1,9 +1,20 @@
-<input type="text" placeholder="What game?">
-
-<div class="reviews">
-  <div *ngFor="let review of reviews">
-    {{review.review}}
-    {{review.voted_up}}
+<div class="game">
+  <div class="guesser-wrapper">
+    <input id="guesser" type="text" placeholder="What game?">
   </div>
-  <hr>
+
+  <div class="review" *ngFor="let review of reviews">
+    <div class="top">
+      <img *ngIf="review.voted_up"
+        src="https://store.akamai.steamstatic.com/public/shared/images/userreviews/icon_thumbsUp_v6.png" alt="">
+      <img *ngIf="!review.voted_up"
+        src="https://store.akamai.steamstatic.com/public/shared/images/userreviews/icon_thumbsDown_v6.png" alt="">
+      <p>
+        {{review.voted_up ? "Recommended" : "Not Recommended"}}
+      </p>
+    </div>
+    <p>
+      {{review.review}}
+    </p>
+  </div>
 </div>

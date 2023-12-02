@@ -1,20 +1,42 @@
-.root__container {
-  width: 100vw;
-  height: 100vh;
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: 0.5fr auto;
-  position: relative;
-}
-
-p {
-  color: black;
-}
-
-.reviews {
+.game {
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  margin: min(2vw, 2vh);
+  gap: 15px;
+
+  .guesser-wrapper {
+    display: flex;
+    justify-content: center;
+
+    #guesser {
+      width: 800px;
+      font-size: xx-large;
+      text-align: center;
+    }
+  }
+
   .review {
+    padding: 10px;
+    background-color: #1b2838;
+
+    p {
+      color: #acb2b8;
+      white-space: pre-wrap;
+      text-align: left;
+    }
+
+    .top {
+      display: flex;
+      flex-direction: row;
+      padding: 10px;
+      gap: 10px;
+
+      font-size: large;
+      background: rgba(0, 0, 0, 0.2);
+
+      img {
+        object-fit: none;
+      }
+    }
   }
 }

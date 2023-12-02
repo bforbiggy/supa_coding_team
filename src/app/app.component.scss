@@ -1,27 +1,33 @@
 .root__container {
   width: 100%;
   min-height: 100vh;
-  background: linear-gradient(to bottom, #372865, #000000);
 }
 
 nav {
   display: flex;
   align-items: center;
   flex-direction: row;
+
+  padding: min(2vw, 2vh);
   gap: 15px;
-  background-color: dimgray;
+  background-color: LightGray;
 
   :last-child {
     flex-grow: 1;
     text-align: right;
   }
 
-  a:hover {
-    text-decoration: underline;
+  p {
+    color: black;
+    font-size: x-large;
+    text-shadow: 5px 5px antiquewhite;
   }
 
-  p,
   a {
     color: black;
+    font-size: large;
+    :hover {
+      text-decoration: underline;
+    }
   }
 }

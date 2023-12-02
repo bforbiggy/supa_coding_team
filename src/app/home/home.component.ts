@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
   name: string = '';
-  reviews: any = '';
+  reviews: any = [];
 
   constructor() {
     this.loadGame();
@@ -20,6 +20,4 @@ export class HomeComponent {
     this.name = data.name;
     this.reviews = data.reviews;
   }
-
-  ngOnInit(): void {}
 }
