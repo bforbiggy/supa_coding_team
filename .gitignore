@@ -1,5 +1,3 @@
-# See http://help.github.com/ignore-files/ for more about ignoring files.
-
 # Compiled output
 /dist
 /tmp
@@ -7,7 +5,7 @@
 /bazel-out
 
 # Node
-/node_modules
+node_modules/
 npm-debug.log
 yarn-error.log
 
@@ -40,7 +38,3 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
-
-
-#Guys we need to add node_module cuz otherwise we be adding 25k files dude, dw these files only needed to be downloaded locally
-node_modules/
