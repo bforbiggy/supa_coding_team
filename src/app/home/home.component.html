@@ -1,6 +1,9 @@
 <input type="text" placeholder="What game?">
 
-
-<div *ngFor="let review of reviews">
-  {{review}}
+<div class="reviews">
+  <div *ngFor="let review of reviews">
+    {{review.review}}
+    {{review.voted_up}}
+  </div>
+  <hr>
 </div>
