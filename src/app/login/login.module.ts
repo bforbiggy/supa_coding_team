@@ -10,11 +10,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { LoginComponent } from './login.component';
 import { NgModule } from '@angular/core';
-import {
-  GoogleLoginProvider,
-  GoogleSigninButtonModule,
-  SocialAuthServiceConfig,
-} from '@abacritt/angularx-social-login';
+import { GoogleSigninButtonModule } from '@abacritt/angularx-social-login';
 
 @NgModule({
   imports: [

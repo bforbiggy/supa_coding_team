@@ -1,0 +1,11 @@
+<header>
+  <base href="/" />
+</header>
+<nav>
+  <p>Guess That Game!</p>
+  <a routerLink="/home">Home</a>
+  <a routerLink="/about">About</a>
+  <a *ngIf="!user" routerLink="/login">Login</a>
+  <p *ngIf="user">Hi {{user.name}}!</p>
+</nav>
+<router-outlet></router-outlet>

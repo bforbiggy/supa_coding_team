@@ -1,5 +1,5 @@
-<div *nfIf="!user">
-  <asl-google-signin-button type="standard" size='medium' text="signin_with" shape="pill" />
+<div *ngIf="!user">
+  <asl-google-signin-button type="standard" size='large' text="signin_with" shape="rectangular" />
 </div>
 
 <p *ngIf="user">You are signed in as {{user.name}}</p>

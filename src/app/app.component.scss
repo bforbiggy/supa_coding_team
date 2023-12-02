@@ -1,5 +1,7 @@
-.root__container {
-  width: 100%;
+:host {
+  display: flex;
+  flex-direction: column;
+  min-width: 100vw;
   min-height: 100vh;
 }
 
@@ -12,22 +14,22 @@ nav {
   gap: 15px;
   background-color: LightGray;
 
-  :last-child {
-    flex-grow: 1;
-    text-align: right;
-  }
-
-  p {
+  :first-child {
     color: black;
     font-size: x-large;
     text-shadow: 5px 5px antiquewhite;
   }
 
-  a {
-    color: black;
-    font-size: large;
-    :hover {
-      text-decoration: underline;
-    }
+  :last-child {
+    flex-grow: 1;
+    text-align: right;
+  }
+}
+
+a {
+  color: black;
+  font-size: large;
+  :hover {
+    text-decoration: underline;
   }
 }

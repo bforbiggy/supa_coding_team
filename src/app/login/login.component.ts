@@ -1,4 +1,3 @@
-import { SocialAuthService, SocialUser } from '@abacritt/angularx-social-login';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,13 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
-  user: SocialUser | undefined;
+  user: any;
 
-  constructor(private authService: SocialAuthService) {
-    this.authService.authState.subscribe((user) => {
-      this.user = user;
-      if (!user) window.localStorage.removeItem('id_token');
-      window.localStorage.setItem('id_token', user.idToken);
-    });
+  async ngOnInit(): Promise<void> {
+    // Attempt to login using token
+    const token = window.localStorage.getItem('token');
+    if (token) {
+      const response = await fetch('http://localhost:3000/login', {
+        headers: {
+          token: `${token}`,
+        },
+      });
+      this.user = await response.json();
+    }
   }
 }
