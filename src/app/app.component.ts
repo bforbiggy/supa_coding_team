@@ -10,6 +10,7 @@ import { AppModule } from './app.module';
     <div>
       <header></header>
       <nav>
+        <p>Guess That Game!</p>
         <a routerLink="/home">Home</a>
         <a routerLink="/about">About</a>
         <a routerLink="/login">Login</a>

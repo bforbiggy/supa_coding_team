@@ -4,25 +4,23 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrl: './home.component.css',
 })
-  
 export class HomeComponent {
-  name: String = "";
-  
-  constructor() { 
+  name: String = '';
+  reviews: String = '';
+
+  constructor() {
     this.loadGame();
   }
 
   async loadGame() {
-    // Load game name
+    // Load game details (random by default)
     const response = await fetch('http://localhost:3000/steamgame');
     const data = await response.json();
     this.name = data.name;
-    //U guys can check the console to find review, it's for our testing purpose, should be fine tho
-    console.log(data.reviews);
+    this.reviews = JSON.stringify(data.reviews);
   }
 
-  ngOnInit(): void {
-  }
+  // ngOnInit(): void {}
 }
