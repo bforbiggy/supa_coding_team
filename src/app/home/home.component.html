@@ -1,6 +1,6 @@
 <div class="game">
   <div class="guesser-wrapper">
-    <input id="guesser" type="text" placeholder="What game?">
+    <input id="guesser" type="text" placeholder="What game?" (keydown.enter)="submitGuess($event)">
   </div>
 
   <div class="review" *ngFor="let review of reviews">
