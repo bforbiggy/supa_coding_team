@@ -7,12 +7,12 @@ import { SupaAuthService } from '../supaauth.service';
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
-  name: string = '';
+  user: any = '';
   reviews: any = [];
 
   constructor(private supaauth: SupaAuthService) {
     supaauth.updated.subscribe((data) => {
-      this.name = supaauth.user.name;
+      this.user = supaauth.user;
       this.loadGame();
     });
   }
@@ -25,7 +25,6 @@ export class HomeComponent {
       },
     });
     const data = await response.json();
-    this.name = data.name;
     this.reviews = data.reviews;
   }
 
@@ -49,7 +48,5 @@ export class HomeComponent {
     else {
       event.target.value = 'BZZT BZZT!';
     }
-
-    console.log(data.result);
   }
 }

@@ -1,4 +1,4 @@
-<div class="game">
+<div *ngIf="user" class="game">
   <div class="guesser-wrapper">
     <input id="guesser" type="text" placeholder="What game?" (keydown.enter)="submitGuess($event)">
   </div>
@@ -18,3 +18,8 @@
     </p>
   </div>
 </div>
+
+
+<p *ngIf="!user">
+  LOG IN DAMN!
+</p>
